@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Sports Events Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f8f8f8;
+        }
+        h1 {
+            color: #333;
+        }
+        .event-register {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #007bff;
+            color: #fff;
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        p, ul {
+            text-align: left;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Student Sports Events Register</h1>
+    <div class="event-register">
+        <form onsubmit="addRow(); return false;">
+            <label for="name">Full Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="event">Select Event:</label><br>
+            <select id="event" name="event" required>
+                <option value="football">Football</option>
+                <option value="basketball">Basketball</option>
+                <option value="volleyball">Volleyball</option>
+                <option value="tennis">Tennis</option>
+            </select><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <h2>Registered Students</h2>
+    <table id="registrationTable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Event</th>
+        </tr>
+    </table>
+
+    <h2>College Name</h2>
+    <p>Example College</p>
+
+    <h2>Sports Facilities</h2>
+    <ul>
+        <li>Football Ground</li>
+        <li>Basketball Court</li>
+        <li>Volleyball Court</li>
+        <li>Tennis Court</li>
+    </ul>
+
+    <div id="map">
+        <!-- Add your map here, if applicable -->
+    </div>
+
+    <script>
+        function addRow() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var event = document.getElementById("event").value;
+
+            var table = document.getElementById("registrationTable");
+            var row = table.insertRow(-1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            cell1.innerHTML = name;
+            cell2.innerHTML = email;
+            cell3.innerHTML = event;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
